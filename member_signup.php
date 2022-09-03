@@ -1,5 +1,5 @@
 <?php
-include "partials/vol_signup_action.php";
+include "partials/member_signup_action.php";
 include "partials/db_connect.php";
 ?>
 
@@ -9,30 +9,18 @@ include "partials/db_connect.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Registeration Page</title>
+    <title>Family Member Registeration Page</title>
 </head>
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <?php require 'partials/_nav.php'?>
-<?php
-if($showalert){
-echo '
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>SuccesS...!!</strong> You have suucssfully created account as a Volunteer in VeerSahayya Portal.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>';
-}
-?>
-
 <div class="container my-4">
-        <h1 class = "text-center"> Signup As a Volunteer to Our VeerSahayya Portal</h1>
-        <form action ="partials/vol_signup_action.php" method="POST">
+        <h1 class = "text-center"> Signup As a Martyrs's / Soldier's Family member to Our VeerSahayya Portal</h1>
+        <form action ="partials/member_signup_action.php" method="POST">
   <div class="form-row my-4">
     <div class="form-group col-md-6 mx-4">
-      <label for="fullName">Full Name</label>
-      <input type="text" class="form-control" id="fullName" name="fullName" placeholder="FirstName MiddleName LastName">
+      <label for="memebr_fullName">Family Member's Full Name</label>
+      <input type="text" class="form-control" id="member_fullName" name="member_fullName" placeholder="FirstName MiddleName LastName">
     </div>
     <div class="form-group col-md-4 mx-4">
       <label for="gender">Gender</label>
@@ -115,11 +103,21 @@ echo '
       <input type="text" name = "zip" class="form-control" id="zip">
     </div>
   </div>
+  <div class="form-row">
+  <div class="form-group col-md-6 mx-4">
+      <label for="soldier_fullName">Soldier's Full Name</label>
+      <input type="text" class="form-control" id="soldier_fullName" name="soldier_fullName" placeholder="FirstName MiddleName LastName">
+    </div>
+    <div class="form-group col-md-2 mx-4">
+      <label for="soldier_ID">Soldier ID</label>
+      <input type="text" name = "soldier_ID" class="form-control" id="soldier_ID">
+    </div>
+</div>
 <div class="form-row">
-<div class="form-group col-md-4 mx-4">
-<label for="workDomain">Work Domain</label>
-      <select id="workDomain" name ="workDomain" class="form-control">
-        <option selected>Select Domain</option>
+<div class="form-group col-md-3 mx-4">
+<label for="help_Domain">Type of help You are looking for</label>
+      <select id="help_Domain" name ="help_Domain" class="form-control">
+        <option selected>Select Help Domain</option>
         <option value="Sport">Sport</option>
         <option value="Culture">Culture</option>
         <option value="Health Care">Health Care</option>
@@ -129,12 +127,6 @@ echo '
         <option value = "Others">Others</option>
 </select>
 </div>
-<div class="form-group col-md-4 mx-4">
-      <label for="timeAvail">Time Availibilty for Volunteering work</label>
-      <input type="text" name = "timeAvail" class="form-control" id="timeAvail">
-</div>
-</div>
-<div class="form-row">
 <div class="form-group col-md-3 mx-4">
       <label for="userName">UserName</label>
       <div class="input-group-prepend">
@@ -150,11 +142,11 @@ echo '
   Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 </small>
     </div>
-  </div>
+</div>
   
 <div class="form-group mx-4">
-    <label for="about">Tell us about your volunteer work Experience</label>
-    <textarea class="form-control" name = "about" id="about" rows="3"></textarea>
+    <label for="help_Desc">Tell us more abput the help aou are looking for.</label>
+    <textarea class="form-control" name = "help_Desc" id="help_Desc" rows="3"></textarea>
   </div>
   <div class="form-row mx-4">
     
