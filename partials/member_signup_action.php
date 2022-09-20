@@ -22,8 +22,11 @@ $userName = $_POST['userName'];
 $passWord = $_POST['passWord'];
 
 $pass = password_hash($passWord,PASSWORD_BCRYPT);
-
-    $sql = "INSERT INTO Family_Member (member_id, member_fullName, gender, mail_ID, phoneNum, help_Domain, fullAddress, city, state, zip, soldier_fullName, soldier_ID, help_Desc, userName, passWord) VALUES ('1','$member_fullName', '$gender', '$mail_ID', '$phoneNum', '$help_Domain', '$fullAddress', '$city', '$state', '$zip', '$soldier_fullName', '$soldier_ID', '$help_Desc', '$userName', '$pass')" ;
+$sql1 = "SELECT * FROM Soldier_Data WHERE Soldier_ID = $soldier_ID";
+$result1 = mysqli_query($conn,$sql1);
+$matchFound = mysqli_num_rows($result1) > 0 ? '1' : '0';
+if($matchFound==1){
+    $sql = "INSERT INTO Family_Member (member_fullName, gender, mail_ID, phoneNum, help_Domain, fullAddress, city, state, zip, soldier_fullName, soldier_ID, help_Desc, userName, passWord) VALUES ('$member_fullName', '$gender', '$mail_ID', '$phoneNum', '$help_Domain', '$fullAddress', '$city', '$state', '$zip', '$soldier_fullName', '$soldier_ID', '$help_Desc', '$userName', '$pass')" ;
     $result = mysqli_query($conn, $sql);
     if($result){
             $showalert = true;
@@ -34,7 +37,11 @@ $pass = password_hash($passWord,PASSWORD_BCRYPT);
         echo "Error..";
     }
 
-
   }
+elseif($matchFound==0){
+  header("Location: alert_3.php");
+  }
+  }
+  
  
 ?>

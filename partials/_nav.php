@@ -7,8 +7,8 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="vol_login.php">Login as A Volunteer</a>
-      <a class="nav-item nav-link" href="fam_login.php">Login as A Family Memebr of Martyr/Soldier</a>
-      <a class="nav-item nav-link disabled" href="vol_signup.php">Signup</a>
+      <a class="nav-item nav-link" href="member_login.php">Login as A Family Memebr of Martyr/Soldier</a>
+      <a class="nav-item nav-link" href="vol_signup.php">Signup</a>
     </div>
   </div>
 </nav>
